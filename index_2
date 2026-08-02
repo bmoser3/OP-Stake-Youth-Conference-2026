@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overland Park Stake Youth Conference — Register</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c2541;
+    --ink-soft:#2a3358;
+    --dawn:#e2ac54;
+    --dawn-soft:#f0d29b;
+    --stone:#f6f2e9;
+    --stone-dim:#ece5d5;
+    --slate:#47597d;
+    --moss:#6b7a55;
+    --line:#d8cfba;
+    --white:#fffdf8;
+    --font-display:'Fraunces', serif;
+    --font-body:'Inter', sans-serif;
+    --font-mono:'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--stone);
+    color:var(--ink);
+    font-family:var(--font-body);
+    line-height:1.5;
+  }
+  .wrap{max-width:920px;margin:0 auto;padding:0 24px;}
+
+  /* ---------- NAV ---------- */
+  .nav{
+    display:flex;justify-content:space-between;align-items:center;
+    padding:22px 0;
+  }
+  .nav-mark{
+    font-family:var(--font-mono);
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--slate);
+  }
+  .nav-cta{
+    font-family:var(--font-body);font-weight:600;font-size:14px;
+    color:var(--white);background:var(--ink);
+    padding:9px 18px;border-radius:100px;text-decoration:none;
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    background:linear-gradient(180deg, var(--ink) 0%, var(--ink-soft) 62%, var(--ink-soft) 100%);
+    color:var(--stone);
+    border-radius:28px;
+    overflow:hidden;
+    position:relative;
+    margin-top:6px;
+  }
+  .hero-inner{
+    padding:56px 40px 0 40px;
+    position:relative;
+    z-index:2;
+  }
+  .eyebrow{
+    font-family:var(--font-mono);
+    font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--dawn-soft);
+    margin:0 0 18px 0;
+  }
+  h1.title{
+    font-family:var(--font-display);
+    font-weight:500;
+    font-style:italic;
+    font-size:clamp(40px,6.4vw,72px);
+    line-height:1.04;
+    margin:0 0 20px 0;
+    max-width:11.5ch;
+  }
+  .hero-sub{
+    font-size:17px;
+    max-width:46ch;
+    color:#c9cfe0;
+    margin:0 0 40px 0;
+  }
+  .hero-meta{
+    display:flex;flex-wrap:wrap;gap:28px;
+    padding-bottom:34px;
+  }
+  .meta-item{display:flex;flex-direction:column;gap:4px;}
+  .meta-label{font-family:var(--font-mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:#8a92b3;}
+  .meta-value{font-family:var(--font-body);font-weight:600;font-size:15px;color:var(--stone);}
+
+  /* trail svg */
+  .trail{display:block;width:100%;height:auto;}
+  .trail-caption{
+    display:flex;justify-content:space-between;
+    padding:0 40px 26px 40px;
+    font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.06em;
+    color:#8a92b3;
+  }
+
+  /* ---------- INFO STRIP ---------- */
+  .info-strip{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:18px;
+    overflow:hidden;
+    margin:28px 0 56px 0;
+  }
+  .info-cell{
+    background:var(--white);
+    padding:22px 22px;
+  }
+  .info-cell .k{
+    font-family:var(--font-mono);
+    font-size:11px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--moss);
+    margin:0 0 8px 0;
+  }
+  .info-cell .v{
+    font-family:var(--font-display);
+    font-size:19px;
+    margin:0;
+  }
+  .info-cell .v small{
+    display:block;font-family:var(--font-body);font-weight:400;font-size:13px;color:var(--slate);margin-top:4px;
+  }
+
+  /* ---------- SECTION HEAD ---------- */
+  .section-head{margin:0 0 26px 0;}
+  .section-head .tag{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--moss);margin:0 0 8px 0;
+  }
+  .section-head h2{
+    font-family:var(--font-display);font-weight:500;font-size:30px;margin:0;
+  }
+
+  /* ---------- FORM ---------- */
+  .card{
+    background:var(--white);
+    border:1px solid var(--line);
+    border-radius:20px;
+    padding:36px;
+    box-shadow:0 1px 0 rgba(28,37,65,.02);
+    margin-bottom:70px;
+    border-left:4px solid var(--dawn);
+  }
+  fieldset{border:none;padding:0;margin:0 0 30px 0;}
+  fieldset legend{
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+    color:var(--slate);padding:0 0 14px 0;width:100%;border-bottom:1px solid var(--line);margin-bottom:18px;
+  }
+  .grid2{display:grid;grid-template-columns:1fr 1fr;gap:18px;}
+  .field{margin-bottom:16px;}
+  .field label{
+    display:block;font-size:13px;font-weight:600;margin-bottom:6px;color:var(--ink);
+  }
+  .field .hint{font-size:12px;color:var(--slate);font-weight:400;margin-top:5px;}
+  .req-mark{color:#a8442f;margin-left:3px;}
+  input.invalid, select.invalid{
+    border-color:#a8442f;
+    background:#fbeeec;
+  }
+  .choice-row.invalid .choice{border-color:#a8442f;}
+  .field-error{display:none;font-size:12px;color:#a8442f;font-weight:600;margin-top:5px;}
+  .field-error.show{display:block;}
+  input[type=text],input[type=email],input[type=tel],select{
+    width:100%;
+    padding:12px 14px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    font-family:var(--font-body);
+    font-size:15px;
+    background:var(--stone);
+    color:var(--ink);
+    transition:border-color .15s ease, background .15s ease;
+    appearance:none;
+    -webkit-appearance:none;
+  }
+  select{
+    background-image:url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2347597d' stroke-width='2'%3e%3cpath d='M6 9l6 6 6-6'/%3e%3c/svg%3e");
+    background-repeat:no-repeat;
+    background-position:right 14px center;
+    background-size:16px;
+    padding-right:38px;
+  }
+  select:invalid{color:#7a8299;}
+  input:focus, select:focus{
+    outline:none;
+    border-color:var(--dawn);
+    background-color:var(--white);
+  }
+  input:focus-visible, select:focus-visible{outline:2px solid var(--slate);outline-offset:2px;}
+
+  .choice-row{display:flex;gap:10px;margin-bottom:14px;}
+  .choice{
+    flex:1;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:13px 14px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:600;
+    text-align:center;
+    background:var(--stone);
+    transition:all .15s ease;
+    user-select:none;
+  }
+  .choice.active{
+    border-color:var(--ink);
+    background:var(--ink);
+    color:var(--stone);
+  }
+  .choice input{position:absolute;opacity:0;pointer-events:none;}
+
+  .conditional{
+    display:none;
+    animation:reveal .2s ease;
+  }
+  .conditional.show{display:block;}
+  @keyframes reveal{from{opacity:0;transform:translateY(-4px);}to{opacity:1;transform:translateY(0);}}
+
+  .submit-row{
+    display:flex;align-items:center;gap:16px;margin-top:8px;flex-wrap:wrap;
+  }
+  button.submit{
+    font-family:var(--font-body);font-weight:700;font-size:15px;
+    background:var(--ink);color:var(--stone);
+    border:none;border-radius:100px;
+    padding:15px 30px;
+    cursor:pointer;
+    transition:transform .12s ease, background .15s ease;
+  }
+  button.submit:hover{background:var(--slate);}
+  button.submit:active{transform:scale(.98);}
+  button.submit:disabled{opacity:.5;cursor:not-allowed;}
+  .form-error{color:#a8442f;font-size:13px;font-weight:600;display:none;}
+
+  /* confirmation */
+  .confirm{display:none;text-align:left;}
+  .confirm.show{display:block;}
+  .confirm .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    font-family:var(--font-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--moss);background:#eef1e7;padding:7px 14px;border-radius:100px;margin-bottom:16px;
+  }
+  .confirm h3{font-family:var(--font-display);font-size:26px;margin:0 0 10px 0;}
+  .confirm p{color:var(--slate);margin:0 0 20px 0;}
+  .recap{background:var(--stone);border-radius:14px;padding:18px 20px;font-size:14px;}
+  .recap div{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px dashed var(--line);}
+  .recap div:last-child{border-bottom:none;}
+  .recap span:first-child{color:var(--slate);}
+  .recap span:last-child{font-weight:600;text-align:right;}
+  .confirm-actions{margin-top:22px;}
+  button.secondary{
+    font-family:var(--font-body);font-weight:700;font-size:14px;
+    background:var(--white);color:var(--ink);
+    border:1.5px solid var(--line);border-radius:100px;
+    padding:13px 26px;
+    cursor:pointer;
+    transition:border-color .15s ease, background .15s ease;
+  }
+  button.secondary:hover{border-color:var(--ink);background:var(--stone);}
+
+  /* ---------- FOOTER / ADMIN ---------- */
+  footer{
+    padding:40px 0 60px 0;
+    border-top:1px solid var(--line);
+    display:flex;justify-content:space-between;align-items:center;
+    flex-wrap:wrap;gap:14px;
+  }
+  footer p{font-size:13px;color:var(--slate);margin:0;}
+  .admin-link{
+    font-family:var(--font-mono);font-size:12px;color:var(--slate);
+    background:none;border:none;cursor:pointer;text-decoration:underline;padding:0;
+  }
+
+  .modal-backdrop{
+    display:none;position:fixed;inset:0;background:rgba(28,37,65,.55);
+    align-items:center;justify-content:center;z-index:50;padding:20px;
+  }
+  .modal-backdrop.show{display:flex;}
+  .modal{
+    background:var(--white);border-radius:18px;padding:28px;max-width:720px;width:100%;
+    max-height:82vh;overflow:auto;
+  }
+  .modal h3{font-family:var(--font-display);margin:0 0 16px 0;}
+  .modal table{width:100%;border-collapse:collapse;font-size:13px;}
+  .modal th,.modal td{text-align:left;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap;}
+  .modal th{font-family:var(--font-mono);font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--slate);}
+  .modal-actions{display:flex;gap:10px;margin-top:18px;flex-wrap:wrap;}
+  .modal-actions button, .modal-actions .close-btn{
+    font-family:var(--font-body);font-weight:600;font-size:13px;
+    border-radius:100px;padding:9px 16px;cursor:pointer;border:1.5px solid var(--line);background:var(--stone);
+  }
+  .modal-actions .primary{background:var(--ink);color:var(--stone);border-color:var(--ink);}
+  .modal-scroll{overflow-x:auto;}
+  .passcode-box input{margin-bottom:12px;}
+
+  @media (max-width:640px){
+    .hero-inner{padding:40px 22px 0 22px;}
+    .trail-caption{padding:0 22px 20px 22px;}
+    .info-strip{grid-template-columns:1fr;}
+    .grid2{grid-template-columns:1fr;}
+    .card{padding:24px;}
+    .choice-row{flex-direction:column;}
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <div class="nav">
+    <div class="nav-mark">OVERLAND PARK STAKE YOUTH CONFERENCE · OCT 2026</div>
+    <a href="#register" class="nav-cta">Register</a>
+  </div>
+
+  <!-- HERO -->
+  <div class="hero">
+    <div class="hero-inner">
+      <p class="eyebrow">Overland Park Stake · Young Men &amp; Young Women · Ages Turning 14+</p>
+      <h1 class="title">Walk with Him</h1>
+      <p class="hero-sub">Three days on the path together — worship, service, and friendship as we follow the Savior one step at a time.</p>
+      <div class="hero-meta">
+        <div class="meta-item">
+          <span class="meta-label">Dates</span>
+          <span class="meta-value">October 10–12, 2026</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Who</span>
+          <span class="meta-value">Youth turning 14 &amp; older</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Location</span>
+          <span class="meta-value">Stake Center & Heritage Park</span>
+        </div>
+        <div class="meta-item">
+          <span class="meta-label">Register by</span>
+          <span class="meta-value">Oct 1st, 2026</span>
+        </div>
+      </div>
+    </div>
+    <svg class="trail" viewBox="0 0 920 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="#3a4570" stroke-width="2"/>
+      <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="url(#g1)" stroke-width="2" stroke-dasharray="6 8"/>
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#e2ac54" stop-opacity="0.15"/>
+          <stop offset="1" stop-color="#e2ac54" stop-opacity="1"/>
+        </linearGradient>
+        <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+          <stop offset="0" stop-color="#f0d29b"/>
+          <stop offset="1" stop-color="#e2ac54" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <circle cx="905" cy="8" r="34" fill="url(#sun)"/>
+      <g>
+        <circle cx="0" cy="150" r="5" fill="#e2ac54"/>
+        <circle cx="220" cy="90" r="5" fill="#e2ac54"/>
+        <circle cx="460" cy="140" r="5" fill="#e2ac54"/>
+        <circle cx="700" cy="55" r="5" fill="#e2ac54"/>
+      </g>
+    </svg>
+    <div class="trail-caption">
+      <span>FRI · OCT 10</span>
+      <span>SAT · OCT 11</span>
+      <span>SUN · OCT 12</span>
+    </div>
+  </div>
+
+  <!-- INFO STRIP -->
+  <div class="info-strip">
+    <div class="info-cell">
+      <p class="k">Members</p>
+      <p class="v">Register with your ward<small>Select your ward on the form</small></p>
+    </div>
+    <div class="info-cell">
+      <p class="k">Friends</p>
+      <p class="v">Bring a friend<small>List the member they're coming with</small></p>
+    </div>
+    <div class="info-cell">
+      <p class="k">Parents</p>
+      <p class="v">One contact required<small>We'll reach you if plans change</small></p>
+    </div>
+  </div>
+
+  <!-- REGISTRATION -->
+  <div id="register">
+    <div class="section-head">
+      <p class="tag">Registration</p>
+      <h2>Sign up for the conference</h2>
+    </div>
+
+    <div class="card">
+      <div id="regForm">
+
+        <fieldset>
+          <legend>Youth information</legend>
+          <div class="grid2">
+            <div class="field">
+              <label for="firstName">First name<span class="req-mark">*</span></label>
+              <input type="text" id="firstName" name="firstName" required autocomplete="given-name">
+            </div>
+            <div class="field">
+              <label for="lastName">Last name<span class="req-mark">*</span></label>
+              <input type="text" id="lastName" name="lastName" required autocomplete="family-name">
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label for="age">Age<span class="req-mark">*</span></label>
+              <select id="age" name="age" required>
+                <option value="" disabled selected>Select age</option>
+                <option value="13">13</option>
+                <option value="14">14</option>
+                <option value="15">15</option>
+                <option value="16">16</option>
+                <option value="17">17</option>
+                <option value="18">18</option>
+              </select>
+            </div>
+            <div class="field">
+              <label>Young Man or Young Woman?<span class="req-mark">*</span></label>
+              <div class="choice-row" id="genderChoice">
+                <label class="choice" data-value="Young Man">
+                  <input type="radio" name="gender" value="Young Man"> Young Man
+                </label>
+                <label class="choice" data-value="Young Woman">
+                  <input type="radio" name="gender" value="Young Woman"> Young Woman
+                </label>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Are you coming from a ward, or as a friend?<span class="req-mark">*</span></label>
+            <div class="choice-row" id="affiliationChoice">
+              <label class="choice active" data-value="ward">
+                <input type="radio" name="affiliation" value="ward" checked> I belong to a ward
+              </label>
+              <label class="choice" data-value="friend">
+                <input type="radio" name="affiliation" value="friend"> I'm a friend
+              </label>
+            </div>
+
+            <div class="conditional show" id="wardBlock">
+              <div class="field">
+                <label for="wardName">Ward<span class="req-mark">*</span></label>
+                <select id="wardName" name="wardName">
+                  <option value="" disabled selected>Select your ward</option>
+                  <option value="Heritage Park Ward">Heritage Park Ward</option>
+                  <option value="Overland Park 1st Ward">Overland Park 1st Ward</option>
+                  <option value="Overland Park 2nd Ward">Overland Park 2nd Ward</option>
+                  <option value="Overland Park 3rd Ward">Overland Park 3rd Ward</option>
+                  <option value="Stanley Ward">Stanley Ward</option>
+                  <option value="Paola Ward">Paola Ward</option>
+                  <option value="Mound City Branch">Mound City Branch</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="conditional" id="friendBlock">
+              <div class="field">
+                <label for="friendOf">Which member are you coming with?<span class="req-mark">*</span></label>
+                <input type="text" id="friendOf" name="friendOf" placeholder="Name of the member who invited you" autocomplete="off">
+                <p class="hint">This helps us know which ward is hosting you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid2">
+            <div class="field">
+              <label for="youthEmail">Your email<span class="req-mark">*</span></label>
+              <input type="email" id="youthEmail" name="youthEmail" required autocomplete="email">
+              <p class="field-error" id="youthEmailError">Enter a valid email address.</p>
+            </div>
+            <div class="field">
+              <label for="youthPhone">Your phone number<span class="req-mark">*</span></label>
+              <input type="tel" id="youthPhone" name="youthPhone" required autocomplete="tel" placeholder="(555) 555-5555">
+              <p class="field-error" id="youthPhoneError">Enter a valid 10-digit phone number.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>Parent / guardian contact</legend>
+          <div class="field">
+            <label for="parentName">Parent or guardian name<span class="req-mark">*</span></label>
+            <input type="text" id="parentName" name="parentName" required autocomplete="off">
+          </div>
+          <div class="grid2">
+            <div class="field">
+              <label for="parentPhone">Parent phone number<span class="req-mark">*</span></label>
+              <input type="tel" id="parentPhone" name="parentPhone" required autocomplete="off" placeholder="(555) 555-5555">
+              <p class="field-error" id="parentPhoneError">Enter a valid 10-digit phone number.</p>
+            </div>
+            <div class="field">
+              <label for="parentEmail">Parent email<span class="req-mark">*</span></label>
+              <input type="email" id="parentEmail" name="parentEmail" required autocomplete="off">
+              <p class="field-error" id="parentEmailError">Enter a valid email address.</p>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="submit-row">
+          <button type="button" class="submit" id="submitBtn">Submit registration</button>
+          <span class="form-error" id="formError">Please fill in all required fields.</span>
+        </div>
+      </div>
+
+      <div class="confirm" id="confirmBlock">
+        <span class="badge">✓ Registered</span>
+        <h3 id="confirmName">You're on the path.</h3>
+        <p>A confirmation has been recorded. Reach out to your Young Men's or Young Women's leader with any questions before October 10th.</p>
+        <div class="recap" id="recap"></div>
+        <div class="confirm-actions">
+          <button type="button" class="secondary" id="registerAnotherBtn">Register another youth?</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>Overland Park Stake Youth Conference · October 10–12, 2026 · "Walk with Him"</p>
+  </footer>
+</div>
+
+<script>
+  const SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwahPMLfclThtlF4we03PI7I7am5lpNKWP4WjVMzDM0PBHo3Qo7vuZ4Dwt5sRYnAK1lZQ/exec';
+
+  // ---- generic choice-row active state (gender) ----
+  document.querySelectorAll('#genderChoice .choice').forEach(label => {
+    label.addEventListener('click', () => {
+      document.querySelectorAll('#genderChoice .choice').forEach(l => l.classList.remove('active'));
+      label.classList.add('active');
+    });
+  });
+
+  // ---- affiliation toggle ----
+  const choiceLabels = document.querySelectorAll('#affiliationChoice .choice');
+  const wardBlock = document.getElementById('wardBlock');
+  const friendBlock = document.getElementById('friendBlock');
+  choiceLabels.forEach(label => {
+    label.addEventListener('click', () => {
+      choiceLabels.forEach(l => l.classList.remove('active'));
+      label.classList.add('active');
+      const val = label.dataset.value;
+      if(val === 'ward'){
+        wardBlock.classList.add('show');
+        friendBlock.classList.remove('show');
+      } else {
+        friendBlock.classList.add('show');
+        wardBlock.classList.remove('show');
+      }
+    });
+  });
+
+  // ---- form submit ----
+  const form = document.getElementById('regForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const formError = document.getElementById('formError');
+  const confirmBlock = document.getElementById('confirmBlock');
+
+  const EMAIL_RE = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+  function digitsOnly(str){ return (str || '').replace(/\D/g, ''); }
+  function isValidPhone(str){
+    const d = digitsOnly(str);
+    return d.length === 10 || (d.length === 11 && d[0] === '1');
+  }
+
+  function markInvalid(el){ el.classList.add('invalid'); }
+  function clearInvalid(el){ el.classList.remove('invalid'); }
+
+  // clear the red state as soon as the person fixes a field
+  ['firstName','lastName','age','youthEmail','youthPhone','wardName','friendOf','parentName','parentPhone','parentEmail'].forEach(id => {
+    const el = document.getElementById(id);
+    el.addEventListener('input', () => clearInvalid(el));
+    el.addEventListener('change', () => clearInvalid(el));
+  });
+  document.querySelectorAll('#genderChoice .choice, #affiliationChoice .choice').forEach(label => {
+    label.addEventListener('click', () => {
+      label.closest('.choice-row').classList.remove('invalid');
+    });
+  });
+
+  submitBtn.addEventListener('click', async () => {
+    formError.style.display = 'none';
+    document.getElementById('youthEmailError').classList.remove('show');
+    document.getElementById('youthPhoneError').classList.remove('show');
+    document.getElementById('parentPhoneError').classList.remove('show');
+    document.getElementById('parentEmailError').classList.remove('show');
+
+    const affiliation = document.querySelector('input[name="affiliation"]:checked').value;
+    const genderChecked = document.querySelector('input[name="gender"]:checked');
+    const data = {
+      firstName: document.getElementById('firstName').value.trim(),
+      lastName: document.getElementById('lastName').value.trim(),
+      age: document.getElementById('age').value,
+      gender: genderChecked ? genderChecked.value : '',
+      affiliation,
+      wardName: document.getElementById('wardName').value.trim(),
+      friendOf: document.getElementById('friendOf').value.trim(),
+      youthEmail: document.getElementById('youthEmail').value.trim(),
+      youthPhone: document.getElementById('youthPhone').value.trim(),
+      parentName: document.getElementById('parentName').value.trim(),
+      parentPhone: document.getElementById('parentPhone').value.trim(),
+      parentEmail: document.getElementById('parentEmail').value.trim(),
+      submittedAt: new Date().toISOString()
+    };
+
+    let hasError = false;
+
+    // required-field checks with visual highlighting
+    [['firstName',data.firstName],['lastName',data.lastName],['age',data.age],
+     ['youthEmail',data.youthEmail],['youthPhone',data.youthPhone],
+     ['parentName',data.parentName],['parentPhone',data.parentPhone],['parentEmail',data.parentEmail]
+    ].forEach(([id, val]) => {
+      const el = document.getElementById(id);
+      if(!val){ markInvalid(el); hasError = true; } else { clearInvalid(el); }
+    });
+
+    if(!data.gender){
+      document.getElementById('genderChoice').classList.add('invalid');
+      hasError = true;
+    } else {
+      document.getElementById('genderChoice').classList.remove('invalid');
+    }
+
+    if(affiliation === 'ward' && !data.wardName){
+      markInvalid(document.getElementById('wardName'));
+      hasError = true;
+    }
+    if(affiliation === 'friend' && !data.friendOf){
+      markInvalid(document.getElementById('friendOf'));
+      hasError = true;
+    }
+
+    // format checks (only run if the field is actually filled in)
+    if(data.youthEmail && !EMAIL_RE.test(data.youthEmail)){
+      markInvalid(document.getElementById('youthEmail'));
+      document.getElementById('youthEmailError').classList.add('show');
+      hasError = true;
+    }
+    if(data.parentEmail && !EMAIL_RE.test(data.parentEmail)){
+      markInvalid(document.getElementById('parentEmail'));
+      document.getElementById('parentEmailError').classList.add('show');
+      hasError = true;
+    }
+    if(data.youthPhone && !isValidPhone(data.youthPhone)){
+      markInvalid(document.getElementById('youthPhone'));
+      document.getElementById('youthPhoneError').classList.add('show');
+      hasError = true;
+    }
+    if(data.parentPhone && !isValidPhone(data.parentPhone)){
+      markInvalid(document.getElementById('parentPhone'));
+      document.getElementById('parentPhoneError').classList.add('show');
+      hasError = true;
+    }
+
+    if(hasError){
+      formError.textContent = 'Please fix the highlighted fields.';
+      formError.style.display = 'inline';
+      return;
+    }
+
+    if(!SCRIPT_URL || SCRIPT_URL.indexOf('PASTE_YOUR') === 0){
+      formError.textContent = 'This form isn\'t connected to a sheet yet — add your Apps Script URL in the code.';
+      formError.style.display = 'inline';
+      return;
+    }
+
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Submitting…';
+
+    try{
+      // no-cors: Apps Script doesn't return CORS headers, so we can't read
+      // the response — but the request still reaches the sheet.
+      await fetch(SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(data)
+      });
+
+      form.style.display = 'none';
+      confirmBlock.classList.add('show');
+      document.getElementById('confirmName').textContent = `Thanks, ${data.firstName} — you're on the path.`;
+      const recap = document.getElementById('recap');
+      recap.innerHTML = `
+        <div><span>Name</span><span>${escapeHtml(data.firstName + ' ' + data.lastName)}</span></div>
+        <div><span>Age</span><span>${escapeHtml(data.age)}</span></div>
+        <div><span>Program</span><span>${escapeHtml(data.gender)}</span></div>
+        <div><span>${affiliation === 'ward' ? 'Ward' : 'Coming with'}</span><span>${escapeHtml(affiliation === 'ward' ? data.wardName : data.friendOf)}</span></div>
+        <div><span>Email</span><span>${escapeHtml(data.youthEmail)}</span></div>
+        <div><span>Parent contact</span><span>${escapeHtml(data.parentName)}</span></div>
+      `;
+    } catch(err){
+      formError.textContent = 'Something went wrong submitting your registration. Please check your connection and try again.';
+      formError.style.display = 'inline';
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Submit registration';
+    }
+  });
+
+  document.getElementById('registerAnotherBtn').addEventListener('click', () => {
+    window.location.reload();
+  });
+
+  function escapeHtml(str){
+    const div = document.createElement('div');
+    div.textContent = str;
+    return div.innerHTML;
+  }
+</script>
+
+</body>
+</html>
