@@ -6,16 +6,7 @@
 <title>Overland Park Stake Youth Conference — Register</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap" rel="stylesheet">
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-D8SEEM6QG4"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-D8SEEM6QG4');
-</script>
-  <style>
+<style>
   :root{
     --ink:#1c2541;
     --ink-soft:#2a3358;
@@ -151,6 +142,11 @@
     font-family:var(--font-display);font-weight:500;font-size:30px;margin:0;
   }
 
+  .hero a{
+    font-family:var(--font-body);font-weight:600;font-size:14px;color:white;
+    text-decoration:none;border-bottom:2px solid var(--ink);
+  }
+  a:hover {text-decoration:underline;color:white;}
   /* ---------- FORM ---------- */
   .card{
     background:var(--white);
@@ -321,10 +317,19 @@
     .card{padding:24px;}
     .choice-row{flex-direction:column;}
   }
-</style>
-
-</head>
+  .cropped-image {
+  /* Define the exact bounding box dimensions you want */
+  width: 300px;
+  height: 200px;
   
+  /* Force the image to fill the box and crop the overflow */
+  object-fit: cover;
+  
+  /* Optional: Choose what part to focus on (center, top, left, etc.) */
+  object-position: 50% 10%; 
+}
+</style>
+</head>
 <body>
 
 <div class="wrap">
@@ -337,12 +342,12 @@
   <div class="hero">
     <div class="hero-inner">
       <p class="eyebrow">Overland Park Stake · Young Men &amp; Young Women · Ages Turning 14+</p>
-      <h1 class="title">Walk with Him</h1>
-      <p class="hero-sub">Three days on the path together — worship, service, and friendship as we follow the Savior one step at a time.</p>
+      <h1 class="title">Feed My Sheep</h1>
+      <p class="hero-sub">Three days to connect, serve, have fun, strengthen friendships, and grow closer to Jesus Christ.</p>
       <div class="hero-meta">
         <div class="meta-item">
           <span class="meta-label">Dates</span>
-          <span class="meta-value">October 10–12, 2026</span>
+          <span class="meta-value">October 9–11, 2026</span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Who</span>
@@ -350,15 +355,20 @@
         </div>
         <div class="meta-item">
           <span class="meta-label">Location</span>
-          <span class="meta-value">Stake Center & Heritage Park</span>
+          <span class="meta-value">Peterson Farm - <a href="20719 Holmes Rd, Belton, MO 64012" target="_blank">20719 Holmes Rd, Belton, MO 64012</a><br />Stake Center - <a href="15915 W 143rd St, Olathe, KS 66062" target="_blank">15915 W 143rd St, Olathe, KS 66062</a><br />Heritage Park - <a href="16050 Pflumm Rd, Olathe, KS 66062" target="_blank">16050 Pflumm Rd, Olathe, KS 66062</a></span>
         </div>
         <div class="meta-item">
           <span class="meta-label">Register by</span>
           <span class="meta-value">Oct 1st, 2026</span>
         </div>
+        <div class="meta-item">
+          <span class="meta-label">Activities</span>
+          <span class="meta-value">Comedian, Bonfire, Food, Workshops, Obstacle Course, Service, Dinner & Dance, Testimonies</span>
+        </div>
       </div>
     </div>
-    <svg class="trail" viewBox="0 0 920 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <img class="cropped-image" src="https://www.churchofjesuschrist.org/imgs/c1d6d263628a25e38d7fffa21127fb292cad4cc5/full/!1200,/0/default" alt="Walk with Him" style="width:100%;border-radius:20px;margin-bottom:20px;">
+    <!-- <svg class="trail" viewBox="0 0 920 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
       <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="#3a4570" stroke-width="2"/>
       <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="url(#g1)" stroke-width="2" stroke-dasharray="6 8"/>
       <defs>
@@ -383,10 +393,10 @@
       <span>FRI · OCT 10</span>
       <span>SAT · OCT 11</span>
       <span>SUN · OCT 12</span>
-    </div>
+    </div>-->
   </div>
 
-  <!-- INFO STRIP -->
+  <!-- INFO STRIP 
   <div class="info-strip">
     <div class="info-cell">
       <p class="k">Members</p>
@@ -401,10 +411,12 @@
       <p class="v">One contact required<small>We'll reach you if plans change</small></p>
     </div>
   </div>
+  -->
 
+  
   <!-- REGISTRATION -->
   <div id="register">
-    <div class="section-head">
+    <div class="section-head" style="padding-top: 30px;">
       <p class="tag">Registration</p>
       <h2>Sign up for the conference</h2>
     </div>
@@ -540,7 +552,7 @@
   </div>
 
   <footer>
-    <p>Overland Park Stake Youth Conference · October 10–12, 2026 · "Walk with Him"</p>
+    <p>Overland Park Stake Youth Conference · October 9–11, 2026 · "Feed My Sheep"</p>
   </footer>
 </div>
 
