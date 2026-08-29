@@ -225,6 +225,27 @@
   }
   .choice input{position:absolute;opacity:0;pointer-events:none;}
 
+  .checkbox-list{display:flex;flex-direction:column;gap:8px;}
+  .checkbox-item{
+    display:flex;align-items:flex-start;gap:12px;
+    border:1.5px solid var(--line);
+    border-radius:10px;
+    padding:13px 14px;
+    cursor:pointer;
+    font-size:14px;
+    font-weight:500;
+    background:var(--stone);
+    transition:all .15s ease;
+  }
+  .checkbox-item.checked{
+    border-color:var(--ink);
+    background:#eef1e7;
+  }
+  .checkbox-item input{
+    width:17px;height:17px;margin-top:1px;flex-shrink:0;
+    accent-color:var(--ink);cursor:pointer;
+  }
+
   .conditional{
     display:none;
     animation:reveal .2s ease;
@@ -368,50 +389,7 @@
       </div>
     </div>
     <img class="cropped-image" src="https://www.churchofjesuschrist.org/imgs/c1d6d263628a25e38d7fffa21127fb292cad4cc5/full/!1200,/0/default" alt="Walk with Him" style="width:100%;border-radius:20px;margin-bottom:20px;">
-    <!-- <svg class="trail" viewBox="0 0 920 150" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-      <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="#3a4570" stroke-width="2"/>
-      <path d="M0,150 C120,150 90,95 220,90 C350,85 300,140 460,140 C620,140 570,60 700,55 C820,51 800,20 920,10" fill="none" stroke="url(#g1)" stroke-width="2" stroke-dasharray="6 8"/>
-      <defs>
-        <linearGradient id="g1" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0" stop-color="#e2ac54" stop-opacity="0.15"/>
-          <stop offset="1" stop-color="#e2ac54" stop-opacity="1"/>
-        </linearGradient>
-        <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
-          <stop offset="0" stop-color="#f0d29b"/>
-          <stop offset="1" stop-color="#e2ac54" stop-opacity="0"/>
-        </radialGradient>
-      </defs>
-      <circle cx="905" cy="8" r="34" fill="url(#sun)"/>
-      <g>
-        <circle cx="0" cy="150" r="5" fill="#e2ac54"/>
-        <circle cx="220" cy="90" r="5" fill="#e2ac54"/>
-        <circle cx="460" cy="140" r="5" fill="#e2ac54"/>
-        <circle cx="700" cy="55" r="5" fill="#e2ac54"/>
-      </g>
-    </svg>
-    <div class="trail-caption">
-      <span>FRI · OCT 10</span>
-      <span>SAT · OCT 11</span>
-      <span>SUN · OCT 12</span>
-    </div>-->
   </div>
-
-  <!-- INFO STRIP 
-  <div class="info-strip">
-    <div class="info-cell">
-      <p class="k">Members</p>
-      <p class="v">Register with your ward<small>Select your ward on the form</small></p>
-    </div>
-    <div class="info-cell">
-      <p class="k">Friends</p>
-      <p class="v">Bring a friend<small>List the member they're coming with</small></p>
-    </div>
-    <div class="info-cell">
-      <p class="k">Parents</p>
-      <p class="v">One contact required<small>We'll reach you if plans change</small></p>
-    </div>
-  </div>
-  -->
 
   
   <!-- REGISTRATION -->
@@ -495,6 +473,47 @@
                 <label for="friendOf">Which member are you coming with?<span class="req-mark">*</span></label>
                 <input type="text" id="friendOf" name="friendOf" placeholder="Name of the member who invited you" autocomplete="off">
                 <p class="hint">This helps us know which ward is hosting you.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="field">
+            <label>Which day(s) and events do you plan to attend?<span class="req-mark">*</span></label>
+            <div class="choice-row" id="attendanceChoice">
+              <label class="choice active" data-value="full">
+                <input type="radio" name="attendanceType" value="full" checked> Full Registration
+              </label>
+              <label class="choice" data-value="select">
+                <input type="radio" name="attendanceType" value="select"> Select the ones you can make it to
+              </label>
+            </div>
+
+            <div class="conditional" id="eventsBlock">
+              <div class="field">
+                <label>Select all that apply<span class="req-mark">*</span></label>
+                <div class="checkbox-list" id="eventsList">
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Fri Oct 9 — Bonfire/Comedian (5–10pm, Peterson Farm)">
+                    Friday, Oct 9 — Bonfire/Comedian (5pm–10pm @ Peterson Farm)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Sat Oct 10 — Morning Field Day/Obstacle Course (10am–12pm, Heritage Park)">
+                    Saturday, Oct 10 — Morning Field Day/Obstacle Course (10am–12pm @ Heritage Park)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Sat Oct 10 — Service Project & Workshops (2–5pm, Stake Center)">
+                    Saturday, Oct 10 — Service Project &amp; Workshops (2pm–5pm @ Stake Center)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Sat Oct 10 — Dinner and Dance (5–10pm, Stake Center)">
+                    Saturday, Oct 10 — Dinner and Dance (5pm–10pm @ Stake Center)
+                  </label>
+                  <label class="checkbox-item">
+                    <input type="checkbox" name="events" value="Sun Oct 11 — Testimony Meeting (time & location TBD)">
+                    Sunday, Oct 11 — Testimony Meeting (Time &amp; Location @ TBD)
+                  </label>
+                </div>
+                <p class="field-error" id="eventsError">Select at least one event.</p>
               </div>
             </div>
           </div>
@@ -586,6 +605,32 @@
     });
   });
 
+  // ---- attendance toggle ----
+  const attendanceLabels = document.querySelectorAll('#attendanceChoice .choice');
+  const eventsBlock = document.getElementById('eventsBlock');
+  attendanceLabels.forEach(label => {
+    label.addEventListener('click', () => {
+      attendanceLabels.forEach(l => l.classList.remove('active'));
+      label.classList.add('active');
+      if(label.dataset.value === 'select'){
+        eventsBlock.classList.add('show');
+      } else {
+        eventsBlock.classList.remove('show');
+        document.getElementById('eventsError').classList.remove('show');
+      }
+    });
+  });
+
+  // ---- event checkbox visual state ----
+  document.querySelectorAll('#eventsList .checkbox-item input').forEach(cb => {
+    cb.addEventListener('change', () => {
+      cb.closest('.checkbox-item').classList.toggle('checked', cb.checked);
+      if(document.querySelectorAll('#eventsList input:checked').length > 0){
+        document.getElementById('eventsError').classList.remove('show');
+      }
+    });
+  });
+
   // ---- form submit ----
   const form = document.getElementById('regForm');
   const submitBtn = document.getElementById('submitBtn');
@@ -624,6 +669,9 @@
 
     const affiliation = document.querySelector('input[name="affiliation"]:checked').value;
     const genderChecked = document.querySelector('input[name="gender"]:checked');
+    const attendanceType = document.querySelector('input[name="attendanceType"]:checked').value;
+    const selectedEvents = Array.from(document.querySelectorAll('#eventsList input:checked')).map(cb => cb.value);
+
     const data = {
       firstName: document.getElementById('firstName').value.trim(),
       lastName: document.getElementById('lastName').value.trim(),
@@ -632,6 +680,7 @@
       affiliation,
       wardName: document.getElementById('wardName').value.trim(),
       friendOf: document.getElementById('friendOf').value.trim(),
+      attendance: attendanceType === 'full' ? 'Full Registration (all events)' : selectedEvents.join('; '),
       youthEmail: document.getElementById('youthEmail').value.trim(),
       youthPhone: document.getElementById('youthPhone').value.trim(),
       parentName: document.getElementById('parentName').value.trim(),
@@ -664,6 +713,11 @@
     }
     if(affiliation === 'friend' && !data.friendOf){
       markInvalid(document.getElementById('friendOf'));
+      hasError = true;
+    }
+
+    if(attendanceType === 'select' && selectedEvents.length === 0){
+      document.getElementById('eventsError').classList.add('show');
       hasError = true;
     }
 
@@ -723,6 +777,7 @@
         <div><span>Age</span><span>${escapeHtml(data.age)}</span></div>
         <div><span>Program</span><span>${escapeHtml(data.gender)}</span></div>
         <div><span>${affiliation === 'ward' ? 'Ward' : 'Coming with'}</span><span>${escapeHtml(affiliation === 'ward' ? data.wardName : data.friendOf)}</span></div>
+        <div><span>Attending</span><span>${escapeHtml(data.attendance)}</span></div>
         <div><span>Email</span><span>${escapeHtml(data.youthEmail)}</span></div>
         <div><span>Parent contact</span><span>${escapeHtml(data.parentName)}</span></div>
       `;
